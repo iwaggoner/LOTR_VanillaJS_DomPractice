@@ -141,6 +141,7 @@ function makeBuddies() {
 	const rivendell = document.getElementById('Rivendell')
 	const asideBuddies = document.createElement('aside')
 	const ulBuddies = document.createElement('ul')
+	ulBuddies.id = 'Buddies'
 	// put an `unordered list` of the `'buddies'` in the aside
 	for(let i = 0;i < buddies.length; i++) {
 		const liBuddies = document.createElement('li')
@@ -163,7 +164,6 @@ function makeBuddies() {
 function leaveTheShire() {
 	console.log('6: leaveTheShire')
 	const rivendell = document.getElementById('Rivendell')
-	const theShire = document.getElementById('The-Shire')
 	const ulHobbits = document.getElementById('hobbits')
 
 	for (let i = 0; i <hobbits.length; i++) {
@@ -189,8 +189,14 @@ function leaveTheShire() {
 
 function beautifulStranger() {
 	console.log('7: beautifulStranger')
+	const rivendell = document.getElementById('Rivendell')
+	const aragorn = document.getElementsByClassName('buddies')
 
+	// console.log(aragorn[3].innerText)
+
+	aragorn[3].textContent = 'Aragorn'
 	// change the `'Strider'` text to `'Aragorn'`
+	
 }
 
 // COMMIT YOUR WORK
