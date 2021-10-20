@@ -55,13 +55,26 @@ function makeMiddleEarth() {
 function makeHobbits() {
 	console.log('2: makeHobbits')
 
-	// display an `unordered list` of hobbits in the shire
-
-	// give each hobbit a class of `hobbit`
-
 	// hint: create a 'ul' outside the loop into which to append the 'li's
-
 	// hint: get 'The-Shire' by using its id
+	const theShire = document.getElementById('The-Shire')
+
+	const ulHobbits = document.createElement('ul')
+	ulHobbits.id = 'hobbits'
+
+	// display an `unordered list` of hobbits in the shire
+	// give each hobbit a class of `hobbit`
+	for (let i = 0; i <hobbits.length; i++) {
+		// create an li for each hobbit
+		const liHobbit = document.createElement('li')
+		liHobbit.textContent = hobbits[i]
+		// give each hobbit a class of hobbit
+		liHobbit.className = 'hobbit'
+		// appended each hobbit li to the hobbits ul
+		ulHobbits.appendChild(liHobbit)
+	}
+	// attached the hobbits ul to the shire
+	theShire.appendChild(ulHobbits)
 }
 
 // COMMIT YOUR WORK
@@ -75,10 +88,18 @@ function keepItSecretKeepItSafe() {
 	console.log('3: keepItSecretKeepItSafe')
 
 	// create a div with an id of `'the-ring'`
+	const oneRingDiv = document.createElement('div')
+	oneRingDiv.id = 'the-ring'
 
 	// give the div a class of `'magic-imbued-jewelry'`
-
+	oneRingDiv.className = 'magic-imbued-jewelry'
 	// add the ring as a child of `Frodo`
+	// find ul where Frodo lives
+	const ulHobbits = document.querySelector('ul')
+	const liFrodo = ulHobbits.children[0]
+	// figure out which il is Frodo
+	// finaly attach the the ring to Frodo
+	liFrodo.appendChild(oneRingDiv)
 }
 
 // COMMIT YOUR WORK
@@ -92,9 +113,17 @@ function makeBaddies() {
 	console.log('4: makeBaddies')
 
 	// display an unordered list of baddies in Mordor
-
+	const morder = document.getElementById('Mordor')
+	const ulBaddies = document.createElement('ul')
+	ulBaddies.id = 'baddies'
 	// give each of the baddies a class of "baddy"
-
+	for(let i = 0;i < baddies.length; i++) {
+		const liBaddy = document.createElement('li')
+		liBaddy.className = 'baddy'
+		liBaddy.textContent = baddies[i]
+		ulBaddies.appendChild(liBaddy)
+	}
+	morder.appendChild(ulBaddies)
 	// remember to append them to Mordor
 }
 
@@ -109,10 +138,19 @@ function makeBuddies() {
 	console.log('5: makeBuddies')
 
 	// create an `aside` tag
-
+	const rivendell = document.getElementById('Rivendell')
+	const asideBuddies = document.createElement('aside')
+	const ulBuddies = document.createElement('ul')
 	// put an `unordered list` of the `'buddies'` in the aside
-
+	for(let i = 0;i < buddies.length; i++) {
+		const liBuddies = document.createElement('li')
+		liBuddies.className = 'buddies'
+		liBuddies.textContent = buddies[i]
+		ulBuddies.appendChild(liBuddies)
+	}
+	asideBuddies.appendChild(ulBuddies)
 	// insert your aside as a child element of `rivendell`
+	rivendell.appendChild(asideBuddies)
 }
 
 // COMMIT YOUR WORK
@@ -124,8 +162,22 @@ function makeBuddies() {
 
 function leaveTheShire() {
 	console.log('6: leaveTheShire')
+	const rivendell = document.getElementById('Rivendell')
+	const theShire = document.getElementById('The-Shire')
+	const ulHobbits = document.getElementById('hobbits')
+
+	for (let i = 0; i <hobbits.length; i++) {
+		// create an li for each hobbit
+		const liHobbit = document.createElement('li')
+		liHobbit.textContent = hobbits[i]
+		// give each hobbit a class of hobbit
+		liHobbit.className = 'hobbit'
+		// appended each hobbit li to the hobbits ul
+		ulHobbits.appendChild(liHobbit)
+	}
 
 	// assemble the `hobbits` and move them to `rivendell`
+	rivendell.appendChild(ulHobbits)
 }
 
 // COMMIT YOUR WORK
